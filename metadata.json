@@ -1,0 +1,7 @@
+{
+  "name": "Bangla Captions",
+  "description": "সেরা বাংলা ক্যাপশন, স্ট্যাটাস ও উক্তি কালেকশন — সার্চ, ক্যাটাগরি ও ওয়ান-ক্লিক কপি সুবিধা সহ রেসপনসিভ ওয়েবসাইট।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>বাংলা ক্যাপশন ও স্ট্যাটাস হাব — Bangla Captions & Status</title>
+  <meta name="description" content="ফেসবুক, ইনস্টাগ্রাম ও হোয়াটসঅ্যাপের জন্য সেরা বাংলা ক্যাপশন, স্ট্যাটাস ও উক্তি কালেকশন। এক ক্লিকে কপি ও শেয়ার করুন।">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-bengali: 'Hind Siliguri', 'Kalpurush', 'SolaimanLipi', -apple-system, sans-serif;
+      --font-latin: 'Plus Jakarta Sans', sans-serif;
+      
+      /* Dark Theme (Default) */
+      --bg-base: #0f172a;
+      --bg-surface: #1e293b;
+      --bg-surface-elevated: #334155;
+      --bg-card: rgba(30, 41, 59, 0.85);
+      --bg-input: #1e293b;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-focus: #38bdf8;
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+      
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --primary-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+      --accent: #f43f5e;
+      --accent-gradient: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);
+      --success: #10b981;
+      --success-gradient: linear-gradient(135deg, #059669 0%, #34d399 100%);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.45);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-text: #7dd3fc;
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.9);
+      --bg-input: #f8fafc;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-focus: #0284c7;
+      
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-sub: #334155;
+      
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+      --accent: #e11d48;
+      --accent-gradient: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);
+      --success: #059669;
+      --success-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.12);
+      
+      --badge-bg: rgba(2, 132, 199, 0.1);
+      --badge-text: #0284c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-bengali);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Ambient Background Glow */
+    .bg-glow {
+      position: fixed;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(225, 29, 72, 0.05) 50%, transparent 70%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color 0.3s ease;
+    }
+
+    [data-theme="light"] header {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-focus);
+      transform: translateY(-2px);
+    }
+
+    .icon-btn .badge-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--accent);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      line-height: 1;
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 36px 0 24px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto 24px;
+    }
+
+    /* Search Bar Box */
+    .search-wrapper {
+      max-width: 640px;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 6px 16px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+    }
+
+    .search-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-right: 12px;
+    }
+
+    .search-input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text-main);
+      font-family: var(--font-bengali);
+      font-size: 1.05rem;
+      outline: none;
+      padding: 8px 0;
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    .search-clear {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px;
+      display: none;
+      transition: color 0.2s ease;
+    }
+
+    .search-clear:hover {
+      color: var(--text-main);
+    }
+
+    /* Quick Action Buttons (Random, Favorites, Custom Maker) */
+    .quick-tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .tool-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-bengali);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tool-btn:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .tool-btn.active {
+      background: var(--primary-gradient);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Categories Horizontal Scroll Bar */
+    .categories-section {
+      margin-bottom: 28px;
+    }
+
+    .categories-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .categories-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .categories-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--bg-surface-elevated) transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .categories-scroll::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .categories-scroll::-webkit-scrollbar-thumb {
+      background: var(--bg-surface-elevated);
+      border-radius: 10px;
+    }
+
+    .category-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-sub);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-bengali);
+      font-size: 0.92rem;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .category-chip:hover {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .category-chip.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+      font-weight: 600;
+    }
+
+    .category-chip .count {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+
+    [data-theme="light"] .category-chip:not(.active) .count {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    /* Active Filter & Stats Bar */
+    .filter-stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding: 0 4px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .caption-count-highlight {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Caption Cards Grid */
+    .captions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+
+    /* Individual Caption Card */
+    .caption-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .caption-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .card-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .card-actions-mini {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-icon-mini {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1rem;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-icon-mini:hover {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+    }
+
+    .btn-icon-mini.fav-active {
+      color: var(--accent);
+    }
+
+    .caption-content {
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin-bottom: 18px;
+      word-break: break-word;
+      white-space: pre-line;
+      position: relative;
+    }
+
+    .caption-author {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-item {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    [data-theme="light"] .tag-item {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-bengali);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .copy-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45);
+    }
+
+    .copy-btn:active {
+      transform: scale(0.97);
+    }
+
+    .copy-btn.copied {
+      background: var(--success-gradient);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--border-color);
+      grid-column: 1 / -1;
+    }
+
+    .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+
+    .empty-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .empty-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 400px;
+      margin: 0 auto 16px;
+    }
+
+    /* Modal / Custom Caption Maker */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 520px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(20px);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-overlay.open .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .modal-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+    }
+
+    .modal-close:hover {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .form-textarea {
+      width: 100%;
+      height: 120px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      color: var(--text-main);
+      font-family: var(--font-bengali);
+      font-size: 1rem;
+      outline: none;
+      resize: vertical;
+    }
+
+    .form-textarea:focus {
+      border-color: var(--border-focus);
+    }
+
+    .form-select, .form-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      color: var(--text-main);
+      font-family: var(--font-bengali);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 8px 18px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-bengali);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-bengali);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0284c7;
+      color: white;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      z-index: 1000;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border-color);
+      padding: 24px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Mobile Optimization */
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 1.65rem;
+      }
+      .hero-desc {
+        font-size: 0.9rem;
+      }
+      .captions-grid {
+        grid-template-columns: 1fr;
+      }
+      .caption-card {
+        padding: 18px;
+      }
+      .caption-content {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <a href="#" class="brand" onclick="resetFilters(); return false;">
+        <div class="brand-icon">✨</div>
+        <div class="brand-text">
+          <h1>বাংলা ক্যাপশন হাব</h1>
+          <span>Bangla Caption & Status Studio</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" id="favFilterBtn" title="প্রিয় ক্যাপশন" onclick="toggleFavoritesView()">
+          <span>❤️</span>
+          <span class="badge-count" id="favBadge">0</span>
+        </button>
+        <button class="icon-btn" id="themeToggleBtn" title="ডার্ক / লাইট মোড" onclick="toggleTheme()">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-tag">🌟 ফেসবুক, ইনস্টাগ্রাম ও হোয়াটসঅ্যাপ স্ট্যাটাস</div>
+      <h2 class="hero-title">মনের ভাব প্রকাশ করুন সেরা ক্যাপশনে</h2>
+      <p class="hero-desc">ভালোবাসা, বাস্তবতা, অনুপ্রেরণা, জীবনের গল্প কিংবা হাসির সেরা বাংলা ক্যাপশন ও উক্তি এক ক্লিকেই কপি করুন।</p>
+
+      <!-- Search Box -->
+      <div class="search-wrapper">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="ক্যাপশন খুঁজুন (যেমন: মা, ভালোবাসা, জীবন, বৃষ্টি, কফি...)" 
+            oninput="handleSearch(this.value)"
+            autocomplete="off"
+          >
+          <button class="search-clear" id="searchClearBtn" onclick="clearSearch()" title="মুছে ফেলুন">✕</button>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="quick-tools">
+        <button class="tool-btn" id="randomBtn" onclick="showRandomCaption()">
+          <span>🎲</span> র‍্যান্ডম ক্যাপশন
+        </button>
+        <button class="tool-btn" id="customMakerBtn" onclick="openCustomMakerModal()">
+          <span>✍️</span> ক্যাপশন লিখুন
+        </button>
+        <button class="tool-btn" id="listenAllBtn" onclick="speakCurrentTop()">
+          <span>🔊</span> শুনে দেখুন
+        </button>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+      <div class="categories-header">
+        <span class="categories-title">ক্যাটাগরি নির্বাচন করুন</span>
+        <span id="categoryNameDisplay" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">সবগুলো</span>
+      </div>
+      <div class="categories-scroll" id="categoriesContainer">
+        <!-- Categories injected via JS -->
+      </div>
+    </section>
+
+    <!-- Filter Stats -->
+    <div class="filter-stats-bar">
+      <div>
+        মোট ক্যাপশন: <span class="caption-count-highlight" id="shownCount">0</span> টি
+      </div>
+      <div id="filterStatusText" style="font-size: 0.85rem;"></div>
+    </div>
+
+    <!-- Captions Grid -->
+    <section class="captions-grid" id="captionsGrid">
+      <!-- Cards rendered via JS -->
+    </section>
+  </main>
+
+  <!-- Modal: Custom Caption Maker -->
+  <div class="modal-overlay" id="customMakerModal" onclick="closeCustomMakerIfClickedOutside(event)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">✍️ আপনার নিজস্ব ক্যাপশন লিখুন</h3>
+        <button class="modal-close" onclick="closeCustomMakerModal()">✕</button>
+      </div>
+      <form onsubmit="handleCustomCaptionSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="customText">ক্যাপশন বা স্ট্যাটাস লিখুন:</label>
+          <textarea id="customText" class="form-textarea" placeholder="এখানে আপনার মনের কথা বা সুন্দর কোনো অনুভূতি লিখুন..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="customCategory">ক্যাটাগরি:</label>
+          <select id="customCategory" class="form-select">
+            <option value="ভালোবাসা">💖 ভালোবাসা</option>
+            <option value="বাস্তবতা">🌿 জীবন ও বাস্তবতা</option>
+            <option value="অনুপ্রেরণা">⚡ অনুপ্রেরণা</option>
+            <option value="কষ্ট">😢 কষ্ট ও অনুভূতি</option>
+            <option value="মা-বাবা">🌸 মা-বাবা ও পরিবার</option>
+            <option value="এটিটিউড">😎 এটিটিউড</option>
+            <option value="হাসি">😂 হাসি ও ফানি</option>
+            <option value="চা প্রেমী">☕ চা প্রেমী</option>
+            <option value="অন্যান্য">✨ অন্যান্য</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="customAuthor">লেখক / আপনার নাম (ঐচ্ছিক):</label>
+          <input type="text" id="customAuthor" class="form-input" placeholder="যেমন: সংগৃহীত / আপনার নাম">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="closeCustomMakerModal()">বাতিল</button>
+          <button type="submit" class="btn-primary">সংরক্ষণ ও কপি করুন</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span id="toastIcon">📋</span>
+    <span id="toastMessage">ক্যাপশন কপি করা হয়েছে!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>❤️ সুন্দর ভাবনার সেরা প্রকাশ • বাংলা ক্যাপশন হাব</p>
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="filterByCategory('ভালোবাসা')">ভালোবাসা</a>
+        <a href="javascript:void(0)" onclick="filterByCategory('মা-বাবা')">মা-বাবা</a>
+        <a href="javascript:void(0)" onclick="filterByCategory('অনুপ্রেরণা')">অনুপ্রেরণা</a>
+        <a href="javascript:void(0)" onclick="filterByCategory('বাস্তবতা')">বাস্তবতা</a>
+        <a href="javascript:void(0)" onclick="filterByCategory('চা প্রেমী')">চা প্রেমী</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Embedded JavaScript Application Logic & Comprehensive Bengali Database -->
+  <script>
+    // Comprehensive Bengali Captions Database with Diverse Categories
+    const DEFAULT_CAPTIONS = [
+      // মা-বাবা ও পরিবার
+      {
+        id: "c-maa-1",
+        category: "মা-বাবা",
+        content: "এক কাপ ধোঁয়া ওঠা গরম চায়ের মিষ্টি সুবাস, আর চায়ের ঘন ফেনায় মমতাময়ী ক্যালিগ্রাফিতে ফুটে ওঠা একটি পবিত্র নাম—‘মা’। পৃথিবীর সবচেয়ে শান্তির জায়গার নাম মায়ের আঁচল।",
+        tags: ["মা", "ভালোবাসা", "শান্তি", "দুধ-চা"],
+        author: "অজ্ঞাত"
+      },
+      {
+        id: "c-maa-2",
+        category: "মা-বাবা",
+        content: "পৃথিবীতে সবাই ত্যাগ করতে পারে স্বার্থের কারণে, কিন্তু মা-ই একমাত্র যিনি সন্তানের জন্য নিজের সমস্ত সুখ হাসিমুখে বিসর্জন দেন।",
+        tags: ["মা", "পরিবার", "ভালোবাসা"],
+        author: "হৃদয়ের কথা"
+      },
+      {
+        id: "c-maa-3",
+        category: "মা-বাবা",
+        content: "বাবার কাঁধ হলো পৃথিবীর সবচেয়ে শক্তিশালী আশ্রয়, যেখানে দাঁড়ালে গোটা পৃথিবী দেখার সাহস পাওয়া যায়।",
+        tags: ["বাবা", "শক্তি", "অনুপ্রেরণা"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-maa-4",
+        category: "মা-বাবা",
+        content: "মায়ের মুখের একটি হাসির চেয়ে মূল্যবান উপহার পৃথিবীতে আর দ্বিতীয়টি নেই। ভালো থাকুক পৃথিবীর সব স্নেহময়ী মায়েরা।",
+        tags: ["মা", "দোয়া", "শ্রদ্ধা"],
+        author: "হুমায়ূন আহমেদ"
+      },
+
+      // ভালোবাসা ও রোমান্টিক
+      {
+        id: "c-love-1",
+        category: "ভালোবাসা",
+        content: "ভালোবাসা মানে শুধু হাত ধরা নয়, ঝড়-বৃষ্টি আর রোদের দিনেও পাশে থাকার এক নীরব প্রতিশ্রুতি।",
+        tags: ["ভালোবাসা", "রোমান্টিক", "অনুভূতি"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-love-2",
+        category: "ভালোবাসা",
+        content: "কিছু মানুষের উপস্থিতি জীবনের প্রতিটি সাধারণ মুহূর্তকেও অসাধারণ সুন্দর করে তোলে। তুমি আমার তেমনি এক প্রিয় গল্প।",
+        tags: ["ভালোবাসা", "প্রিয়জন", "স্মৃতি"],
+        author: "রোমান্টিক ক্যাপশন"
+      },
+      {
+        id: "c-love-3",
+        category: "ভালোবাসা",
+        content: "যদি জানতে চাও কতটা ভালোবাসি, তবে শ্রাবণের প্রতিটি বৃষ্টির ফোঁটা গুণে দেখো—যত ফোঁটা পড়বে, তার চেয়েও দ্বিগুণ ভালোবাসা আমার হৃদয়ে।",
+        tags: ["রোমান্টিক", "বৃষ্টি", "প্রেম"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-love-4",
+        category: "ভালোবাসা",
+        content: "তুমি আমার সেই নিঃশব্দ প্রার্থনা, যা আমি প্রতিটি রাতে সৃষ্টিকর্তার কাছে একান্ত গোপনে চেয়েছি।",
+        tags: ["ভালোবাসা", "প্রার্থনা", "মন"],
+        author: "অনামী কবি"
+      },
+      {
+        id: "c-love-5",
+        category: "ভালোবাসা",
+        content: "হাজারো ভিড়ের মাঝেও যে চোখের ভাষা বুঝতে পারে, আসল মায়ায় জড়ানো মানুষ তো সেই।",
+        tags: ["মায়া", "অনুরাগ", "সম্পর্ক"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-love-6",
+        category: "ভালোবাসা",
+        content: "ভালোবাসা হলো পরস্পরের অপূর্ণতাগুলোকে ভালোবেসে পূর্ণতা দেওয়া।",
+        tags: ["প্রেম", "পূর্ণতা", "জীবন"],
+        author: "রবীন্দ্রনাথ ঠাকুর"
+      },
+
+      // জীবন ও বাস্তবতা
+      {
+        id: "c-life-1",
+        category: "বাস্তবতা",
+        content: "জীবনের সবচেয়ে বড় শিক্ষা হলো—অতিরিক্ত প্রত্যাশা মানুষকে সবচেয়ে বেশি আহত করে। কম আশা রাখুন, শান্তিতে বাঁচুন।",
+        tags: ["বাস্তবতা", "শিক্ষা", "জীবন"],
+        author: "বাস্তব উপলব্ধি"
+      },
+      {
+        id: "c-life-2",
+        category: "বাস্তবতা",
+        content: "সময় আর পরিস্থিতি মানুষকে অনেক কিছু শিখিয়ে দেয়। কার জন্য কতটা থামতে হয়, আর কার জন্য এগিয়ে যেতে হয়।",
+        tags: ["সময়", "পরিস্থিতি", "বাস্তবতা"],
+        author: "জীবনবোধ"
+      },
+      {
+        id: "c-life-3",
+        category: "বাস্তবতা",
+        content: "কাগজের নৌকা আর মানুষের ভরসা—দুটোই দেখতে সুন্দর, কিন্তু সামান্য ঢেউ এলেই ভেঙে পড়ে। শক্ত হতে শিখুন।",
+        tags: ["বাস্তবতা", "ভরসা", "শিক্ষা"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-life-4",
+        category: "বাস্তবতা",
+        content: "মানুষ যখন একা থাকতে শিখে যায়, তখন সে কারও ওপর নির্ভর করার দুর্বলতা থেকে চিরতরে মুক্তি পায়।",
+        tags: ["একাকীত্ব", "আত্মবিশ্বাস", "জীবন"],
+        author: "হুমায়ূন আহমেদ"
+      },
+      {
+        id: "c-life-5",
+        category: "বাস্তবতা",
+        content: "অর্থ আপনাকে বিছানা দিতে পারে কিন্তু ঘুম নয়, বই দিতে পারে কিন্তু জ্ঞান নয়, সঙ্গী দিতে পারে কিন্তু সত্যিকারের ভালোবাসা নয়।",
+        tags: ["সত্য", "অর্থ", "মূল্যবোধ"],
+        author: "জীবন দর্শন"
+      },
+      {
+        id: "c-life-6",
+        category: "বাস্তবতা",
+        content: "ক্ষমা করে দেওয়া দুর্বলতা নয়, বরং নিজের মনের শান্তিকে রক্ষা করার সবচেয়ে বুদ্ধিমান সিদ্ধান্ত।",
+        tags: ["ক্ষমা", "শান্তি", "মন"],
+        author: "সংগৃহীত"
+      },
+
+      // অনুপ্রেরণা ও মোটিভেশন
+      {
+        id: "c-mot-1",
+        category: "অনুপ্রেরণা",
+        content: "সূর্য ডোবার পর হতাশ হবেন না, কারণ পরের দিন সকালে সূর্য আরও দ্বিগুণ আলো নিয়ে পৃথিবীতে উদিত হয়। আপনার দিনও আসবে।",
+        tags: ["আশা", "মোটিভেশন", "সাফল্য"],
+        author: "অনুপ্রেরণা"
+      },
+      {
+        id: "c-mot-2",
+        category: "অনুপ্রেরণা",
+        content: "কখনও নিজের স্বপ্নকে পরিস্থিতির কাছে বিক্রি করবেন না। ধৈর্য ধরুন, কঠোর পরিশ্রম করুন—সাফল্য আপনার দরজায় কড়া নাড়বেই।",
+        tags: ["স্বপ্ন", "পরিশ্রম", "লড়াই"],
+        author: "এ পি জে আব্দুল কালাম"
+      },
+      {
+        id: "c-mot-3",
+        category: "অনুপ্রেরণা",
+        content: "পড়ে যাওয়া অপরাধ নয়, পড়ে থাকার পর উঠে না দাঁড়ানোটাই আসল পরাজয়। লড়াই চালিয়ে যান!",
+        tags: ["সাহস", "লড়াই", "বিজয়ী"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-mot-4",
+        category: "অনুপ্রেরণা",
+        content: "তুমি যা ভাবো, তুমি তাই হও। তোমার চিন্তাই তোমার ভাগ্য নির্ধারণ করে। ইতিবাচক ভাবুন, সুন্দরভাবে বাঁচুন।",
+        tags: ["ইতিবাচক", "চিন্তা", "ভাগ্য"],
+        author: "গৌতম বুদ্ধ"
+      },
+      {
+        id: "c-mot-5",
+        category: "অনুপ্রেরণা",
+        content: "রাস্তা যদি কঠিন হয়, মনে রেখো তুমি এমন এক গন্তব্যে পৌঁছাচ্ছ যা সাধারণ মানুষদের জন্য নয়।",
+        tags: ["কঠিন পথ", "গন্তব্য", "সাফল্য"],
+        author: "মোটিভেশনাল বাণী"
+      },
+
+      // চা প্রেমী (Tea Lover)
+      {
+        id: "c-tea-1",
+        category: "চা প্রেমী",
+        content: "এক কাপ ধোঁয়া ওঠা গরম চা, আর এক চিলতে বৃষ্টির শব্দ—হৃদয়ের সমস্ত ক্লান্তি নিমিষেই দূর করে দেওয়ার জন্য এর চেয়ে সুন্দর আর কী হতে পারে?",
+        tags: ["চা", "দুধ-চা", "শান্তি", "বৃষ্টি"],
+        author: "চা খোর"
+      },
+      {
+        id: "c-tea-2",
+        category: "চা প্রেমী",
+        content: "ভালোবাসা বদলে যেতে পারে, মানুষ পরিবর্তিত হতে পারে, কিন্তু এক কাপ খাঁটি দুধ-চা কখনও বেইমানি করে না!",
+        tags: ["দুধ-চা", "আড্ডা", "ভালোবাসা"],
+        author: "টি লাভার"
+      },
+      {
+        id: "c-tea-3",
+        category: "চা প্রেমী",
+        content: "চায়ের কাপের সাথে হওয়া কিছু নীরব আড্ডা মনের ভেতরের জমাট বাঁধা সব কষ্ট গলিয়ে দেয়।",
+        tags: ["চা", "আড্ডা", "বন্ধুত্ব"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-tea-4",
+        category: "চা প্রেমী",
+        content: "সকালের প্রথম চুমুক যখন গরম চায়ে পড়ে, মনে হয় নতুন একটা দিনের সব জটিলতা জয়ের প্রস্তুতি শেষ।",
+        tags: ["সকাল", "চা", "ফ্রেশ"],
+        author: "দৈনন্দিন অনুভূতি"
+      },
+
+      // কষ্ট ও অনুভূতি
+      {
+        id: "c-sad-1",
+        category: "কষ্ট",
+        content: "হাসিমুখের পেছনের নীরব কান্নাটা সবাই দেখতে পায় না। যারা দেখে, তারা কখনো ছেড়ে যায় না।",
+        tags: ["কষ্ট", "হাসি", "অনুভূতি"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-sad-2",
+        category: "কষ্ট",
+        content: "কিছু অবহেলা মানুষকে একা হতে শেখায়, আর কিছু বাস্তবতা মানুষকে নীরব হতে বাধ্য করে।",
+        tags: ["অবহেলা", "নীরবতা", "কষ্ট"],
+        author: "মনের কথা"
+      },
+      {
+        id: "c-sad-3",
+        category: "কষ্ট",
+        content: "স্মৃতিগুলো আজও আগের মতোই স্পষ্ট, কেবল সেই মানুষটাই আজ অন্য কারও গল্পের অধ্যায়।",
+        tags: ["স্মৃতি", "অতীত", "বেদনা"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-sad-4",
+        category: "কষ্ট",
+        content: "চোখের জলের কোনো দাম নেই যখন মানুষটা মন থেকেই অনুভূতিহীন হয়ে যায়। নিজের যত্ন নিজেকেই নিতে হয়।",
+        tags: ["কষ্ট", "আত্মসম্মান", "বাস্তবতা"],
+        author: "সংগৃহীত"
+      },
+
+      // এটিটিউড ও ব্যক্তিত্ব
+      {
+        id: "c-att-1",
+        category: "এটিটিউড",
+        content: "আমার নীরবতাকে দুর্বলতা ভাবার ভুল করো না। সিংহ যখন শিকার করে, তখন সে গর্জন করে না।",
+        tags: ["রয়্যাল", "এটিটিউড", "ব্যক্তিত্ব"],
+        author: "অ্যাটিটিউড স্ট্যাটাস"
+      },
+      {
+        id: "c-att-2",
+        category: "এটিটিউড",
+        content: "যেখানে আমার উপস্থিতির মূল্যায়ন নেই, সেখান থেকে নিঃশব্দে সরে আসাই আমার ব্যক্তিত্বের সৌন্দর্য।",
+        tags: ["আত্মসম্মান", "মর্যাদা", "ব্যক্তিত্ব"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-att-3",
+        category: "এটিটিউড",
+        content: "ভিড়ের মাঝে কারও ছায়া হয়ে বাঁচার চেয়ে, নিজের ছোট্ট রাস্তায় একাই সম্রাট হয়ে চলা অনেক সম্মানের।",
+        tags: ["সম্রাট", "একলা চলো", "রয়্যাল"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-att-4",
+        category: "এটিটিউড",
+        content: "আমি সবার মন জুগিয়ে চলার মানুষ নই। আমার কাছে সত্যটা মুখের ওপর বলাটাই আসল চরিত্র।",
+        tags: ["স্পষ্টবাদী", "চরিত্র", "সত্য"],
+        author: "সংগৃহীত"
+      },
+
+      // ইসলামিক ও আধ্যাত্মিক
+      {
+        id: "c-isl-1",
+        category: "ইসলামিক",
+        content: "আল্লাহর সিদ্ধান্তের ওপর আস্থা রাখো। তিনি তোমার জন্য যা নির্ধারণ করেছেন, তা তোমার কল্পনার চেয়েও উত্তম ও সুন্দর।",
+        tags: ["ঈমান", "আল্লাহ", "ভরসা"],
+        author: "ইসলামিক বাণী"
+      },
+      {
+        id: "c-isl-2",
+        category: "ইসলামিক",
+        content: "সিজদাহ হলো এমন এক পবিত্র জায়গা, যেখানে আপনি মাটিতে ফিসফিস করবেন আর তা আসমানে আরশে আজীমে শোনা যাবে।",
+        tags: ["নামাজ", "সিজদা", "শান্তি"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-isl-3",
+        category: "ইসলামিক",
+        content: "সবুর এমন এক তিক্ত বৃক্ষ, যার ফল সর্বদা সবচেয়ে মধুর ও বরকতপূর্ণ হয়। ধৈর্য ধারণ করুন।",
+        tags: ["ধৈর্য", "সবর", "বরকত"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-isl-4",
+        category: "ইসলামিক",
+        content: "যখন পৃথিবীর সব দরজা বন্ধ হয়ে যায়, তখন মনে রাখবেন—আসমানের দরজা সবসময় খোলা থাকে আপনার ক্ষমার জন্য।",
+        tags: ["তওবা", "দোয়া", "রহমত"],
+        author: "ইসলামিক ক্যাপশন"
+      },
+
+      // বন্ধুত্ব ও আড্ডা
+      {
+        id: "c-fri-1",
+        category: "বন্ধুত্ব",
+        content: "বন্ধু তো তারাই, যাদের সাথে এক কাপ চা আর অকারণে ঘণ্টা পর ঘণ্টা হাসাহাসি করে জীবনের সব জটিলতা ভুলে থাকা যায়।",
+        tags: ["বন্ধু", "আড্ডা", "স্মৃতি"],
+        author: "বন্ধুত্ব"
+      },
+      {
+        id: "c-fri-2",
+        category: "বন্ধুত্ব",
+        content: "বয়স বাড়ার সাথে সাথে বন্ধুর সংখ্যা কমতে পারে, কিন্তু যারা পাশে থাকে তারা একেকজন খাঁটি হীরার মতো অমূল্য।",
+        tags: ["বন্ধুত্ব", "হীরা", "বিশ্বাস"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-fri-3",
+        category: "বন্ধুত্ব",
+        content: "রক্তের সম্পর্ক না হয়েও যারা পরিবারের চেয়ে বেশি আপন হয়ে ওঠে, তাদের নামই হলো খাঁটি বন্ধু।",
+        tags: ["বন্ধু", "আপন", "ভালোবাসা"],
+        author: "সংগৃহীত"
+      },
+
+      // হাসি ও ফানি
+      {
+        id: "c-fun-1",
+        category: "হাসি",
+        content: "ঘুমের সাথে আমার সম্পর্ক এতটাই গভীর যে, অ্যালার্ম বাজলে মনে হয় শত্রু ঘরে ঢুকে যুদ্ধ ঘোষণা করেছে!",
+        tags: ["ঘুম", "ফানি", "মজা"],
+        author: "মজার ক্যাপশন"
+      },
+      {
+        id: "c-fun-2",
+        category: "হাসি",
+        content: "আজকাল এত বেশি পড়াশোনা করছি যে বই খুললেই বই নিজেই বলছে—'ভাই মাফ চাই, একটু ফোনটা টিপ দে!'",
+        tags: ["পড়াশোনা", "হাসি", "স্টুডেন্ট"],
+        author: "মজা"
+      },
+      {
+        id: "c-fun-3",
+        category: "হাসি",
+        content: "ডায়েট করার সিদ্ধান্ত নেওয়ার ঠিক ৫ মিনিট পরেই কেন জানি পৃথিবীর সমস্ত বিরিয়ানি আর মিষ্টির ছবি চোখের সামনে ভেসে ওঠে!",
+        tags: ["খাবার", "ডায়েট", "বিরিয়ানি"],
+        author: "ফুডি"
+      },
+
+      // বৃষ্টি ও মনখারাপ
+      {
+        id: "c-rain-1",
+        category: "বৃষ্টি",
+        content: "মেঘলা আকাশ আর ঝুম বৃষ্টির দিনে পুরনো স্মৃতির জানলাগুলো আপনাআপনি খুলে যায়। বৃষ্টি যেন ফেলে আসা দিনের সুর।",
+        tags: ["বৃষ্টি", "মেঘ", "স্মৃতি"],
+        author: "সংগৃহীত"
+      },
+      {
+        id: "c-rain-2",
+        category: "বৃষ্টি",
+        content: "ভেজা মাটির সোঁদা গন্ধ আর টিনের চালে বৃষ্টির রিমঝিম শব্দ—সবচেয়ে বড় ওষুধ ক্লান্ত মনের জন্য।",
+        tags: ["বৃষ্টি", "প্রকৃতি", "শান্তি"],
+        author: "বর্ষার গান"
+      }
+    ];
+
+    const CATEGORIES = [
+      { id: "all", name: "সবগুলো", icon: "🌟" },
+      { id: "মা-বাবা", name: "মা-বাবা ও পরিবার", icon: "🌸" },
+      { id: "ভালোবাসা", name: "ভালোবাসা ও প্রেম", icon: "💖" },
+      { id: "বাস্তবতা", name: "জীবন ও বাস্তবতা", icon: "🌿" },
+      { id: "অনুপ্রেরণা", name: "অনুপ্রেরণা ও আশা", icon: "⚡" },
+      { id: "চা প্রেমী", name: "চা প্রেমী", icon: "☕" },
+      { id: "কষ্ট", name: "কষ্ট ও অনুভূতি", icon: "😢" },
+      { id: "ইসলামিক", name: "ইসলামিক স্ট্যাটাস", icon: "🌙" },
+      { id: "এটিটিউড", name: "এটিটিউড ও রয়্যাল", icon: "😎" },
+      { id: "বন্ধুত্ব", name: "বন্ধুত্ব ও আড্ডা", icon: "🤝" },
+      { id: "হাসি", name: "হাসি ও ফানি", icon: "😂" },
+      { id: "বৃষ্টি", name: "বৃষ্টি ও মনখারাপ", icon: "🌧️" },
+    ];
+
+    // State
+    let currentCategory = "all";
+    let searchQuery = "";
+    let isFavoritesOnly = false;
+    let captions = [];
+    let favorites = new Set();
+
+    // Initialize App
+    document.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+      loadStoredData();
+      renderCategories();
+      renderCaptions();
+      updateFavBadge();
+    });
+
+    // Storage and State Management
+    function loadStoredData() {
+      try {
+        const storedFavs = localStorage.getItem("bangla_captions_favs");
+        if (storedFavs) {
+          favorites = new Set(JSON.parse(storedFavs));
+        }
+        const customCaptions = localStorage.getItem("bangla_captions_custom");
+        if (customCaptions) {
+          captions = [...JSON.parse(customCaptions), ...DEFAULT_CAPTIONS];
+        } else {
+          captions = [...DEFAULT_CAPTIONS];
+        }
+      } catch (e) {
+        console.error("Storage load error:", e);
+        captions = [...DEFAULT_CAPTIONS];
+      }
+    }
+
+    function saveFavorites() {
+      try {
+        localStorage.setItem("bangla_captions_favs", JSON.stringify([...favorites]));
+        updateFavBadge();
+      } catch (e) {
+        console.error("Save fav error:", e);
+      }
+    }
+
+    function saveCustomCaption(newCaption) {
+      try {
+        const custom = JSON.parse(localStorage.getItem("bangla_captions_custom") || "[]");
+        custom.unshift(newCaption);
+        localStorage.setItem("bangla_captions_custom", JSON.stringify(custom));
+        captions.unshift(newCaption);
+        renderCaptions();
+      } catch (e) {
+        console.error("Save custom error:", e);
+      }
+    }
+
+    // Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem("bangla_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      updateThemeIcon(savedTheme);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const nextTheme = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("bangla_theme", nextTheme);
+      updateThemeIcon(nextTheme);
+      showToast(nextTheme === "dark" ? "ডার্ক মোড সক্রিয় 🌙" : "লাইট মোড সক্রিয় ☀️");
+    }
+
+    function updateThemeIcon(theme) {
+      const iconSpan = document.getElementById("themeIcon");
+      if (iconSpan) {
+        iconSpan.textContent = theme === "light" ? "☀️" : "🌙";
+      }
+    }
+
+    // Render Categories
+    function renderCategories() {
+      const container = document.getElementById("categoriesContainer");
+      if (!container) return;
+
+      container.innerHTML = CATEGORIES.map(cat => {
+        const count = cat.id === "all" 
+          ? captions.length 
+          : captions.filter(c => c.category === cat.id).length;
+
+        const isActive = currentCategory === cat.id && !isFavoritesOnly;
+        return `
+          <button 
+            class="category-chip ${isActive ? 'active' : ''}" 
+            onclick="filterByCategory('${cat.id}')"
+          >
+            <span>${cat.icon}</span>
+            <span>${cat.name}</span>
+            <span class="count">${count}</span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    // Render Captions
+    function renderCaptions() {
+      const grid = document.getElementById("captionsGrid");
+      const countDisplay = document.getElementById("shownCount");
+      const statusText = document.getElementById("filterStatusText");
+      if (!grid) return;
+
+      let filtered = captions.filter(c => {
+        // Category check
+        if (currentCategory !== "all" && c.category !== currentCategory) {
+          return false;
+        }
+        // Favorites check
+        if (isFavoritesOnly && !favorites.has(c.id)) {
+          return false;
+        }
+        // Search query check
+        if (searchQuery.trim() !== "") {
+          const q = searchQuery.toLowerCase().trim();
+          const matchContent = c.content.toLowerCase().includes(q);
+          const matchCat = c.category.toLowerCase().includes(q);
+          const matchAuthor = (c.author || "").toLowerCase().includes(q);
+          const matchTags = (c.tags || []).some(t => t.toLowerCase().includes(q));
+          return matchContent || matchCat || matchAuthor || matchTags;
+        }
+        return true;
+      });
+
+      if (countDisplay) {
+        countDisplay.textContent = filtered.length;
+      }
+
+      if (statusText) {
+        if (isFavoritesOnly) {
+          statusText.textContent = "❤️ প্রিয় ক্যাপশনের তালিকা";
+        } else if (searchQuery.trim() !== "") {
+          statusText.textContent = `সার্চ ফলাফল: "${searchQuery}"`;
+        } else if (currentCategory !== "all") {
+          const catObj = CATEGORIES.find(c => c.id === currentCategory);
+          statusText.textContent = `ক্যাটাগরি: ${catObj ? catObj.name : currentCategory}`;
+        } else {
+          statusText.textContent = "সকল নতুন ও ট্রেন্ডিং ক্যাপশন";
+        }
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">${isFavoritesOnly ? '💔' : '🔍'}</div>
+            <h3 class="empty-title">${isFavoritesOnly ? 'কোনো প্রিয় ক্যাপশন পাওয়া যায়নি' : 'কোনো ক্যাপশন মেলেনি'}</h3>
+            <p class="empty-desc">${isFavoritesOnly ? 'ক্যাপশন কার্ডের হার্ট (❤️) বাটনে ক্লিক করে প্রিয় ক্যাপশন যুক্ত করুন।' : 'অন্য কোনো শব্দ বা ক্যাটাগরি দিয়ে খুঁজে দেখতে পারেন।'}</p>
+            <button class="btn-primary" onclick="resetFilters()">সবগুলো ক্যাপশন দেখুন</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const isFav = favorites.has(item.id);
+        const tagsHtml = (item.tags || []).map(t => `<span class="tag-item">#${t}</span>`).join("");
+        const authorHtml = item.author ? `<span class="caption-author">— ${escapeHtml(item.author)}</span>` : "";
+
+        return `
+          <article class="caption-card" id="card-${item.id}">
+            <div>
+              <div class="card-top">
+                <span class="card-category-badge">${getCategoryIcon(item.category)} ${escapeHtml(item.category)}</span>
+                <div class="card-actions-mini">
+                  <button 
+                    class="btn-icon-mini ${isFav ? 'fav-active' : ''}" 
+                    title="${isFav ? 'প্রিয় থেকে সরান' : 'প্রিয়তে যুক্ত করুন'}" 
+                    onclick="toggleFavorite('${item.id}', this)"
+                  >
+                    ${isFav ? '❤️' : '🤍'}
+                  </button>
+                  <button 
+                    class="btn-icon-mini" 
+                    title="ভয়েস শুনুন (Voice)" 
+                    onclick="speakText('${escapeForJs(item.content)}', this)"
+                  >
+                    🔊
+                  </button>
+                  <button 
+                    class="btn-icon-mini" 
+                    title="হোয়াটসঅ্যাপে শেয়ার করুন" 
+                    onclick="shareWhatsApp('${escapeForJs(item.content)}')"
+                  >
+                    💬
+                  </button>
+                </div>
+              </div>
+              <div class="caption-content">
+                ${formatHighlightedContent(item.content, searchQuery)}
+                ${authorHtml}
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-tags">
+                ${tagsHtml}
+              </div>
+              <button 
+                class="copy-btn" 
+                onclick="copyCaption('${escapeForJs(item.content)}', this)"
+                title="ক্লিপবোর্ডে কপি করুন"
+              >
+                <span>📋</span> কপি করুন
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    // Helper functions
+    function getCategoryIcon(catId) {
+      const match = CATEGORIES.find(c => c.id === catId);
+      return match ? match.icon : "🏷️";
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function escapeForJs(str) {
+      if (!str) return "";
+      return str
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, "\\n")
+        .replace(/\r/g, "");
+    }
+
+    function formatHighlightedContent(text, query) {
+      if (!query || query.trim() === "") {
+        return escapeHtml(text);
+      }
+      const safeText = escapeHtml(text);
+      const safeQuery = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${safeQuery})`, 'gi');
+      return safeText.replace(regex, '<mark style="background: rgba(56, 189, 248, 0.35); color: inherit; padding: 2px 4px; border-radius: 4px;">$1</mark>');
+    }
+
+    // Filtering & Search
+    function filterByCategory(catId) {
+      currentCategory = catId;
+      isFavoritesOnly = false;
+      updateCategoryActiveState();
+      renderCaptions();
+
+      // Scroll to grid smoothly
+      const section = document.querySelector(".categories-section");
+      if (section && window.innerWidth < 768) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function updateCategoryActiveState() {
+      const chips = document.querySelectorAll(".category-chip");
+      chips.forEach(chip => chip.classList.remove("active"));
+      
+      const activeChip = Array.from(chips).find(chip => {
+        const text = chip.innerText;
+        const catObj = CATEGORIES.find(c => c.id === currentCategory);
+        return catObj && text.includes(catObj.name);
+      });
+      if (activeChip && !isFavoritesOnly) {
+        activeChip.classList.add("active");
+      }
+
+      const catNameDisplay = document.getElementById("categoryNameDisplay");
+      if (catNameDisplay) {
+        if (isFavoritesOnly) {
+          catNameDisplay.textContent = "❤️ প্রিয় ক্যাপশন";
+        } else {
+          const match = CATEGORIES.find(c => c.id === currentCategory);
+          catNameDisplay.textContent = match ? match.name : "সবগুলো";
+        }
+      }
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      const clearBtn = document.getElementById("searchClearBtn");
+      if (clearBtn) {
+        clearBtn.style.display = val.length > 0 ? "block" : "none";
+      }
+      renderCaptions();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById("searchInput");
+      if (input) {
+        input.value = "";
+        searchQuery = "";
+      }
+      const clearBtn = document.getElementById("searchClearBtn");
+      if (clearBtn) clearBtn.style.display = "none";
+      renderCaptions();
+    }
+
+    function resetFilters() {
+      currentCategory = "all";
+      searchQuery = "";
+      isFavoritesOnly = false;
+      const input = document.getElementById("searchInput");
+      if (input) input.value = "";
+      const clearBtn = document.getElementById("searchClearBtn");
+      if (clearBtn) clearBtn.style.display = "none";
+      const favBtn = document.getElementById("favFilterBtn");
+      if (favBtn) favBtn.classList.remove("active");
+      updateCategoryActiveState();
+      renderCaptions();
+      showToast("সব ক্যাপশন লোড হয়েছে ✨");
+    }
+
+    // Favorites View
+    function toggleFavoritesView() {
+      isFavoritesOnly = !isFavoritesOnly;
+      const favBtn = document.getElementById("favFilterBtn");
+      if (favBtn) {
+        favBtn.classList.toggle("active", isFavoritesOnly);
+      }
+      updateCategoryActiveState();
+      renderCaptions();
+      showToast(isFavoritesOnly ? "প্রিয় ক্যাপশনের তালিকা খোলা হয়েছে ❤️" : "সব ক্যাপশন খোলা হয়েছে ✨");
+    }
+
+    function toggleFavorite(id, btnElement) {
+      if (favorites.has(id)) {
+        favorites.delete(id);
+        if (btnElement) {
+          btnElement.innerHTML = "🤍";
+          btnElement.classList.remove("fav-active");
+          btnElement.title = "প্রিয়তে যুক্ত করুন";
+        }
+        showToast("প্রিয় তালিকা থেকে সরানো হয়েছে");
+      } else {
+        favorites.add(id);
+        if (btnElement) {
+          btnElement.innerHTML = "❤️";
+          btnElement.classList.add("fav-active");
+          btnElement.title = "প্রিয় থেকে সরান";
+        }
+        showToast("প্রিয় তালিকায় যোগ করা হয়েছে ❤️");
+      }
+      saveFavorites();
+      if (isFavoritesOnly) {
+        renderCaptions();
+      }
+    }
+
+    function updateFavBadge() {
+      const badge = document.getElementById("favBadge");
+      if (!badge) return;
+      badge.textContent = favorites.size;
+      badge.style.display = favorites.size > 0 ? "inline-block" : "none";
+    }
+
+    // 1-Click Copy Functionality
+    async function copyCaption(text, btnElement) {
+      try {
+        await navigator.clipboard.writeText(text);
+        
+        if (btnElement) {
+          const originalHtml = btnElement.innerHTML;
+          btnElement.innerHTML = "<span>✓</span> কপিড!";
+          btnElement.classList.add("copied");
+          
+          setTimeout(() => {
+            btnElement.innerHTML = originalHtml;
+            btnElement.classList.remove("copied");
+          }, 2000);
+        }
+
+        showToast("ক্যাপশন কপি করা হয়েছে! 📋");
+      } catch (err) {
+        // Fallback for older browsers
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand("copy");
+          showToast("ক্যাপশন কপি করা হয়েছে! 📋");
+        } catch (e) {
+          showToast("কপি করা যায়নি, অনুগ্রহ করে সিলেক্ট করে কপি করুন");
+        }
+        document.body.removeChild(textarea);
+      }
+    }
+
+    // WhatsApp Share
+    function shareWhatsApp(text) {
+      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + "\n\n— বাংলা ক্যাপশন হাব থেকে সংগৃহীত")}`;
+      window.open(url, "_blank");
+    }
+
+    // Random Caption Picker
+    function showRandomCaption() {
+      if (captions.length === 0) return;
+      const randomIndex = Math.floor(Math.random() * captions.length);
+      const randomItem = captions[randomIndex];
+      
+      // Filter directly to this or search
+      searchQuery = randomItem.content.substring(0, 18);
+      const input = document.getElementById("searchInput");
+      if (input) input.value = searchQuery;
+      currentCategory = "all";
+      isFavoritesOnly = false;
+      updateCategoryActiveState();
+      renderCaptions();
+      
+      showToast("🎲 একটি আকর্ষণীয় র‍্যান্ডম ক্যাপশন!");
+    }
+
+    // Speech Synthesis (Audio reader)
+    function speakText(text, btnElement) {
+      if (!('speechSynthesis' in window)) {
+        showToast("আপনার ব্রাউজারে ভয়েস সাপোর্ট নেই");
+        return;
+      }
+
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        if (btnElement) btnElement.innerHTML = "🔊";
+        showToast("ভয়েস বন্ধ করা হয়েছে ⏹️");
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "bn-BD";
+      utterance.rate = 0.92;
+      utterance.pitch = 1.1; // Warm, gentle pitch
+
+      // Attempt to pick Bengali voice if installed
+      const voices = window.speechSynthesis.getVoices();
+      const bnVoice = voices.find(v => v.lang.startsWith("bn") || v.name.toLowerCase().includes("bangla") || v.name.toLowerCase().includes("bengali"));
+      if (bnVoice) {
+        utterance.voice = bnVoice;
+      }
+
+      if (btnElement) btnElement.innerHTML = "⏸️";
+
+      utterance.onend = () => {
+        if (btnElement) btnElement.innerHTML = "🔊";
+      };
+
+      utterance.onerror = () => {
+        if (btnElement) btnElement.innerHTML = "🔊";
+      };
+
+      window.speechSynthesis.speak(utterance);
+      showToast("ভয়েস শুনছেন... 🔊");
+    }
+
+    function speakCurrentTop() {
+      const firstCard = document.querySelector(".caption-content");
+      if (firstCard) {
+        const cleanText = firstCard.innerText.split("—")[0].trim();
+        speakText(cleanText);
+      } else {
+        showToast("কোনো ক্যাপশন পাওয়া যায়নি");
+      }
+    }
+
+    // Toast Notification Controller
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      const msgSpan = document.getElementById("toastMessage");
+      if (!toast || !msgSpan) return;
+
+      msgSpan.textContent = msg;
+      toast.classList.add("show");
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+
+    // Custom Maker Modal
+    function openCustomMakerModal() {
+      const modal = document.getElementById("customMakerModal");
+      if (modal) {
+        modal.classList.add("open");
+        const textarea = document.getElementById("customText");
+        if (textarea) textarea.focus();
+      }
+    }
+
+    function closeCustomMakerModal() {
+      const modal = document.getElementById("customMakerModal");
+      if (modal) {
+        modal.classList.remove("open");
+      }
+    }
+
+    function closeCustomMakerIfClickedOutside(e) {
+      if (e.target.id === "customMakerModal") {
+        closeCustomMakerModal();
+      }
+    }
+
+    function handleCustomCaptionSubmit(e) {
+      e.preventDefault();
+      const text = document.getElementById("customText").value.trim();
+      const category = document.getElementById("customCategory").value;
+      const author = document.getElementById("customAuthor").value.trim() || "সংগৃহীত";
+
+      if (!text) return;
+
+      const newCaption = {
+        id: "custom-" + Date.now(),
+        category: category,
+        content: text,
+        tags: ["আমার_লেখা", category],
+        author: author
+      };
+
+      saveCustomCaption(newCaption);
+      closeCustomMakerModal();
+      
+      // Auto-copy to clipboard
+      navigator.clipboard.writeText(text);
+      
+      // Clear form
+      document.getElementById("customText").value = "";
+      document.getElementById("customAuthor").value = "";
+
+      showToast("ক্যাপশন সংরক্ষিত ও কপি হয়েছে! ✨");
+    }
+  </script>
+</body>
+</html>
